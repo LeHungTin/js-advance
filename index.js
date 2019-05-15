@@ -1,41 +1,27 @@
-// arrow function expresstion
+// var a = {
+// 	name: 'aaa',
+// 	run: function() {
+// 		var run2 = function() {
+// 			console.log('My name is ', this.name);
+// 		}.bind(this);
 
-// function sum(a, b) {
-// 	return a + b;
-// }
-
-// console.log(sum(2, 5));
-
-// var sum = function(a, b) {
-// 	return a + b;
+// 		run2();
+// 	}
 // };
 
-// console.log(sum(2, 5));
+// a.run();
 
-// var sum = (a, b) => {
-// 	return a + b;
-// }
+var a = {
+	name: 'aaa',
+	run: function() {
+		var run2 = () => {
+			console.log('My name is ', this.name);
+		}
 
-// console.log(sum(2, 5));
+		run2();
+	}
+};
 
-// var sum = (a, b) => a + b;
+a.run();
 
-// console.log(sum(2, 5));
-
-// var square = (x) => x*x;
-
-// console.log(square(2));
-
-var arr = [1, 2, 3];
-
-var newArr = arr.map(x => x*x);
-
-console.log(newArr);
-
-// var doSomething = () => Date.now();
-
-// console.log(doSomething());
-
-//note: 
-// 1, Neu co 2 tham so hoac khong co tham so nao phai co ();
-// 2. Neu co 2 dong lenh tro len trong ham thi phai co {};
+// arrow function khong co context, this cua no la context cua ham gan nhat chua no.
