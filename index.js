@@ -1,37 +1,17 @@
-// Array-like object & arguments
+// Default parameters
 
-// const names = ['Tin', 'Tuan', 'Hung'];
-
-// for(let i = 0; i < names.length; i++) {
-// 	console.log(names[i]);
-// }
-
-// const obj = {
-// 	0: 'Tin',
-// 	1: 'Tuan',
-// 	2: 'Hung',
-// 	length: 3
-// };
-
-// for(let i = 0; i < obj.length; i++) {
-// 	console.log(obj[i]);
-// }
-
-function sum() {
-	// console.log(arguments);
-	// console.log(arguments.length);
-	let result = 0;
-	for(let i = 0; i < arguments.length; i++) {
-		result += arguments[i];
+function greeting(name = 'friend', language = 'ja') {
+	if(language === 'en') {
+		return `Hi, ${name}`;
 	}
-	return result;
+
+	if(language === 'ja') {
+		return `Konichiwa, ${name}`; 
+	}
+
+	return 'Chao ban';
 }
 
-// function sum() {
-// 	const numbers = Array.from(arguments);
-// 	return numbers.reduce(function(sum, num) {
-// 		return sum + num;
-// 	}, 0);
-// }
+console.log(greeting('Tin'));
 
-console.log(sum(1, 2, 3, 5, 7, 9));
+//cho phep cac tham so duoc dat ten duoc khoi tao voi gia tri mac dinh neu khong co value duoc truyen vao hoac undefined duoc truyen vao
