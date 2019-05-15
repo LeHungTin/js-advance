@@ -1,59 +1,30 @@
-// super
+// static
+// static  method chi duoc goi truc tiep tu class
+// cac instance duoc tao ra tu class khong the goi cac static method
 
-// class Hero {
-// 	constructor(name, hp, damage) {
-// 		this.name = name;
-// 		this.hp = hp;
-// 		this.damage = damage;
-// 	}
 
-// 	applyDamage(damage) {
-// 		this.hp -= damage;
-// 	}
-
-// 	attack(enemy) {
-// 		enemy.applyDamage(this.damage);
-// 	}
-// }
-
-// const Tin = new Hero('Tin', 100, 10);
-// const Quang = new Hero('Quang', 150, 5);
-
-// console.log({ Tin, Quang });
-// Tin.attack(Quang);
-// console.log({ Tin, Quang });
-
-class Hero {
-	constructor(name, hp, damage) {
-		this.name = name;
-		this.hp = hp;
-		this.damage = damage;
+class Foo {
+	static someMethod() {
+		console.log('some method');
 	}
 
-	applyDamage(damage) {
-		this.hp -= damage;
-	}
-
-	attack(enemy) {
-		enemy.applyDamage(this.damage);
+	anotherMethod() {
+		console.log('another method');
 	}
 }
 
-class RangedHero extends Hero {  // subclass
-	constructor(name, hp, damage, range) {
-		super(name, hp, damage);
-		this.range = range;
-	}
+Foo.someMethod();
 
-	attack(enemy) {
-		super.attack(enemy);
-		this.hp += this.damage;
-	}
+// no tuong tu nhu prototye
+
+function Foo() {
+
 }
 
-const Tin = new RangedHero('Tin', 100, 10);
-const Quang = new Hero('Quang', 150, 5);
+Foo.protopye.anotherMethod = function() {
+	console.log('another method');
+}
 
-console.log({ Tin, Quang });
-Tin.attack(Quang);
-console.log({ Tin, Quang });
+Foo.someMethod = function() {
+	console.log('some method');
+}
