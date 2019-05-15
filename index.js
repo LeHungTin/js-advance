@@ -1,27 +1,14 @@
-// var a = {
-// 	name: 'aaa',
-// 	run: function() {
-// 		var run2 = function() {
-// 			console.log('My name is ', this.name);
-// 		}.bind(this);
+// Template string
 
-// 		run2();
-// 	}
-// };
+// function greeting(name) {
+// 	return 'Hi ' + name + '!';
+// }
 
-// a.run();
+// console.log(greeting('Tin'));
 
-var a = {
-	name: 'aaa',
-	run: function() {
-		var run2 = () => {
-			console.log('My name is ', this.name);
-		}
+function greeting(name) {
+	return `Hi ${name} ${1 + 2}
+	${3*3}!`;
+}
 
-		run2();
-	}
-};
-
-a.run();
-
-// arrow function khong co context, this cua no la context cua ham gan nhat chua no.
+console.log(greeting('Tin'));
