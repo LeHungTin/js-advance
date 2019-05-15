@@ -1,17 +1,16 @@
-// Default parameters
+// call
 
-function greeting(name = 'friend', language = 'ja') {
-	if(language === 'en') {
-		return `Hi, ${name}`;
-	}
-
-	if(language === 'ja') {
-		return `Konichiwa, ${name}`; 
-	}
-
-	return 'Chao ban';
+function greeting(name) {
+	console.log(`Hi! My name is ${this.name} I am  ${this.age}`);
 }
 
-console.log(greeting('Tin'));
+var cat = {
+	name: 'Tom',
+	age: '100'
+};
 
-//cho phep cac tham so duoc dat ten duoc khoi tao voi gia tri mac dinh neu khong co value duoc truyen vao hoac undefined duoc truyen vao
+greeting.call(cat);
+// greeting.call(cat, 'Mickey'); khi da truyen object vao roi thi tham so cung ten khong con tac dung haha :)))
+
+// Goi ham va tra ve gia tri cua ham.
+// Nhan vao tham so thu nhat dai dien cho this cua ham, cac tham so sau la cac tham so cua ham
