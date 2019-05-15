@@ -1,28 +1,59 @@
-// class inheritance
+// super
 
-class Animal {
-	constructor(name) {
+// class Hero {
+// 	constructor(name, hp, damage) {
+// 		this.name = name;
+// 		this.hp = hp;
+// 		this.damage = damage;
+// 	}
+
+// 	applyDamage(damage) {
+// 		this.hp -= damage;
+// 	}
+
+// 	attack(enemy) {
+// 		enemy.applyDamage(this.damage);
+// 	}
+// }
+
+// const Tin = new Hero('Tin', 100, 10);
+// const Quang = new Hero('Quang', 150, 5);
+
+// console.log({ Tin, Quang });
+// Tin.attack(Quang);
+// console.log({ Tin, Quang });
+
+class Hero {
+	constructor(name, hp, damage) {
 		this.name = name;
+		this.hp = hp;
+		this.damage = damage;
 	}
 
-	eat() {
-		console.log('Eatting...');
+	applyDamage(damage) {
+		this.hp -= damage;
 	}
-}
 
-class Bird extends Animal {
-	fly() {
-		console.log('Flying...');
-	}
-}
-
-class Parrot extends Bird {
-	speak() {
-		console.log('Speaking...');
+	attack(enemy) {
+		enemy.applyDamage(this.damage);
 	}
 }
 
-const vet = new Parrot('Tin');
+class RangedHero extends Hero {  // subclass
+	constructor(name, hp, damage, range) {
+		super(name, hp, damage);
+		this.range = range;
+	}
 
-vet.eat();
-vet.speak();
+	attack(enemy) {
+		super.attack(enemy);
+		this.hp += this.damage;
+	}
+}
+
+const Tin = new RangedHero('Tin', 100, 10);
+const Quang = new Hero('Quang', 150, 5);
+
+console.log({ Tin, Quang });
+Tin.attack(Quang);
+console.log({ Tin, Quang });
