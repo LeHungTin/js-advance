@@ -1,15 +1,15 @@
-// enhanced object literals
-
-const name = 'Tom';
-
-const cat = {
-	name,
-	run() {
-		console.log('Hi', this.name);
+class Mouse {
+	constructor(name) {
+		this.name = name;
 	}
-};
 
-cat.run();
+	run() {
+		console.log(this.name + ' is running');
+	}
+}
 
-// cach viet ngan gon hon so voi viet kieu object literals
-// cac object co key trung voi ten cua value
+const mouse = new Mouse('Mickey');
+mouse.run();
+
+// viet theo kieu huong doi tuong
+// thuc chat la dua tren prototype
