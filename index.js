@@ -1,16 +1,17 @@
-// call
+// apply: func.apply(this, [param1, param2,...])
 
-function greeting(name) {
-	console.log(`Hi! My name is ${this.name} I am  ${this.age}`);
+function sum() {
+	const numbers = Array.from(arguments);
+	return numbers.reduce((sum, num) => sum + num, 0);
 }
 
-var cat = {
-	name: 'Tom',
-	age: '100'
-};
+// console.log(sum(1, 2));
 
-greeting.call(cat);
-// greeting.call(cat, 'Mickey'); khi da truyen object vao roi thi tham so cung ten khong con tac dung haha :)))
+function average() {
+	const x = sum.apply(null, arguments);
+	return x/arguments.length;
+}
 
-// Goi ham va tra ve gia tri cua ham.
-// Nhan vao tham so thu nhat dai dien cho this cua ham, cac tham so sau la cac tham so cua ham
+console.log(average(1, 2, 3, 6));
+
+// dung tuong tu nhu thang call, nhung nhan vao la 1 mang cac tham so => dung cho truong hop khong biet chinh xac so luong tham so duoc truyen vao (dung arguments)
