@@ -1,15 +1,28 @@
-class Mouse {
+// class inheritance
+
+class Animal {
 	constructor(name) {
 		this.name = name;
 	}
 
-	run() {
-		console.log(this.name + ' is running');
+	eat() {
+		console.log('Eatting...');
 	}
 }
 
-const mouse = new Mouse('Mickey');
-mouse.run();
+class Bird extends Animal {
+	fly() {
+		console.log('Flying...');
+	}
+}
 
-// viet theo kieu huong doi tuong
-// thuc chat la dua tren prototype
+class Parrot extends Bird {
+	speak() {
+		console.log('Speaking...');
+	}
+}
+
+const vet = new Parrot('Tin');
+
+vet.eat();
+vet.speak();
