@@ -1,17 +1,15 @@
-// apply: func.apply(this, [param1, param2,...])
+// enhanced object literals
 
-function sum() {
-	const numbers = Array.from(arguments);
-	return numbers.reduce((sum, num) => sum + num, 0);
-}
+const name = 'Tom';
 
-// console.log(sum(1, 2));
+const cat = {
+	name,
+	run() {
+		console.log('Hi', this.name);
+	}
+};
 
-function average() {
-	const x = sum.apply(null, arguments);
-	return x/arguments.length;
-}
+cat.run();
 
-console.log(average(1, 2, 3, 6));
-
-// dung tuong tu nhu thang call, nhung nhan vao la 1 mang cac tham so => dung cho truong hop khong biet chinh xac so luong tham so duoc truyen vao (dung arguments)
+// cach viet ngan gon hon so voi viet kieu object literals
+// cac object co key trung voi ten cua value
